@@ -1,10 +1,10 @@
 ## Titel van jouw website
-www.mijnliveomgeving.com is een website van (..jouw naam..) waar gebruikers kunnen (..nut gebruiker..) bedoeld voor (..doelgroep..)
-De website is enigszins te vergelijken met (..concurrentie1..) of (..concurrentie2..) maar toch anders omdat (..uniek aspect..)
+www.mijnliveomgeving.com is een website van (Diaquino Fortmeier) waar gebruikers (wattpad nieuws kunnen lezen en bekijken wanneer evenementen worden gehouden, maar ook hun favoriete schrijvers kunnen opzoeken en zien welke boeken hun al hebben geschreven) bedoeld voor (schrijvers/lezers)
+De website is enigszins te vergelijken met (wattpad.com) of (fanfiction.net) maar toch anders omdat (hier alleen wordt gefocused op de het laatste nieuws en updates, maar ook de status te weergeven van schrijvers)
 
 ### Uniek aan dit concept is: 
- * eerste u.s.p. (vul hier in, waarin jouw site anders is dan alle anderen)
- * tweede u.s.p. (vul hier in, waar jouw site door gaat opvallen, wat zal iedereen onthouden van jouw site?)
+ * eerste u.s.p. (De laatste updates of evenementen worden hier weergegeven)
+ * tweede u.s.p. (Je kan de status van je favoriete schrijver bijhouden)
 
 ---
 #### Milestones 
