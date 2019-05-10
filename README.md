@@ -4,7 +4,7 @@ De website is enigszins te vergelijken met (wattpad.com) of (fanfiction.net) maa
 
 ### Uniek aan dit concept is: 
  * eerste u.s.p. (De laatste updates of evenementen worden hier weergegeven)
- * tweede u.s.p. (Je kan de status van je favoriete schrijver bijhouden)
+ * tweede u.s.p. (Je kan de status van je favoriete schrijver bijhouden of nieuwe schrijvers ontdekken)
 
 ---
 #### Milestones 
@@ -24,7 +24,7 @@ Deze fase duurt 3 weken
 | Milestone  | Status | Link | Type Document of cloudservice |
 | ------ |  ------ | ------ | ------ |
 | README                                            | ONGOING | [README.md]  (dit document)          | Markdown |
-| B1-K1-W1 Debriefing                               | ONGOING | [Debriefing]                         | Markdown |
+| B1-K1-W1 Debriefing                               | DONE | [Debriefing]                         | Markdown |
 | B1-K1-W2 Planning                                 | TODO | [Planning]                           | Markdown |
 | B1-K1-W2 Plan van aanpak                          | TODO | [Plan van Aanpak]                    | Markdown of Word/RTF|
 | B1-K1-W2 User stories                             | TODO | [User Stories]                       | Markdown of Word/RTF|
