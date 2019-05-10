@@ -23,8 +23,8 @@ Deze fase duurt 3 weken
 
 | Milestone  | Status | Link | Type Document of cloudservice |
 | ------ |  ------ | ------ | ------ |
-| README                                            | TODO | [README.md]  (dit document)          | MarkDown |
-| B1-K1-W1 Debriefing                               | TODO | [Debriefing]                         | Markdown |
+| README                                            | ONGOING | [README.md]  (dit document)          | Markdown |
+| B1-K1-W1 Debriefing                               | ONGOING | [Debriefing]                         | Markdown |
 | B1-K1-W2 Planning                                 | TODO | [Planning]                           | Markdown |
 | B1-K1-W2 Plan van aanpak                          | TODO | [Plan van Aanpak]                    | Markdown of Word/RTF|
 | B1-K1-W2 User stories                             | TODO | [User Stories]                       | Markdown of Word/RTF|
