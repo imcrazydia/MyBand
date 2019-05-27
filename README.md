@@ -39,11 +39,11 @@ Deze fase duurt 3 weken
 [Debriefing]: <https://github.com/imcrazydia/myband/blob/master/debriefing.md>
 [Planning]: <doc/fase-1/planning.md>
 [Plan van Aanpak]: <doc/fase-1/plan-van-aanpak.md>
-[User stories]: <doc/fase-1/user-stories.md>
+[User stories]: <https://github.com/imcrazydia/myband/blob/master/backlog_sprints.pdf>
 [Design]: <doc/fase-1/design/design.md/>
-[FO]: <https://github.com/imcrazydia/myband/blob/master/sprints.pdf>
-[Flow]: <doc/fase-1/flow.svg>
-[Urenschatting]: <doc/fase-1/urenschatting.md>
+[FO]: <https://github.com/imcrazydia/myband/blob/master/functioneelontwerp.pdf>
+[Flow]: <https://github.com/imcrazydia/myband/blob/master/functioneelontwerp.pdf>
+[Urenschatting]: <https://github.com/imcrazydia/myband/blob/master/backlog_sprints.pdf>
 [axShare]: <http://w2d1bw.axshare.com/>
 
 #### Fase 2: Realiseren van de opdracht (in sprints)
