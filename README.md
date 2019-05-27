@@ -35,8 +35,8 @@ Deze fase duurt 3 weken
 | B1-K1-W2 Sfeer impressie / schermontwerpen        | TODO | [Design]                             | Afbeeldingen |
 
 [Kwalificatiedossier]: https://kwalificaties.s-bb.nl/Handlers/DocumentLibrary.ashx?id=276758
-[README.md]: <https://github.com/JouwGithubNaam/myband/blob/master/README.md>
-[Debriefing]: <doc/fase-1/debriefing.md>
+[README.md]: <https://github.com/imcrazydia/myband/blob/master/README.md>
+[Debriefing]: <https://github.com/imcrazydia/myband/blob/master/debriefing.md>
 [Planning]: <doc/fase-1/planning.md>
 [Plan van Aanpak]: <doc/fase-1/plan-van-aanpak.md>
 [User stories]: <doc/fase-1/user-stories.md>
