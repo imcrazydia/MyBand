@@ -41,7 +41,7 @@ Deze fase duurt 3 weken
 [Plan van Aanpak]: <doc/fase-1/plan-van-aanpak.md>
 [User stories]: <doc/fase-1/user-stories.md>
 [Design]: <doc/fase-1/design/design.md/>
-[FO]: </doc/fase-1/functioneel-ontwerp.md>
+[FO]: <https://github.com/imcrazydia/myband/blob/master/sprints.pdf>
 [Flow]: <doc/fase-1/flow.svg>
 [Urenschatting]: <doc/fase-1/urenschatting.md>
 [axShare]: <http://w2d1bw.axshare.com/>
