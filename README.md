@@ -50,8 +50,8 @@ Deze fase duurt 3 weken
 
 | Milestone  | Status | Link |
 | ------ |  ------ | ------ |
-| B1-K1-W2 Product backlog                          | TODO | [Backlog]                            | Link naar Trello met Sprint planningen | |
-| B1-K1-W2 Sprint planning 1, 2 en 3                | TODO | [Trello] / [Trello Tips]             | Link naar Trello met Sprint planningen | |
+| B1-K1-W2 Product backlog                          | DONE | [Backlog]                            | Link naar Trello met Sprint planningen | |
+| B1-K1-W2 Sprint planning 1, 2 en 3                | DONE | [Trello] / [Trello Tips]             | Link naar Trello met Sprint planningen | |
 | B1-K1-W3 Technisch Ontwerp                        | TODO | [TO]                                 | Markdown of Word/RTF| |
 
 [Backlog]: <https://github.com/imcrazydia/myband/blob/master/none_code/backlog_sprints.pdf>
