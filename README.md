@@ -36,14 +36,14 @@ Deze fase duurt 3 weken
 
 [Kwalificatiedossier]: https://kwalificaties.s-bb.nl/Handlers/DocumentLibrary.ashx?id=276758
 [README.md]: <https://github.com/imcrazydia/myband/blob/master/README.md>
-[Debriefing]: <https://github.com/imcrazydia/myband/blob/master/debriefing.md>
+[Debriefing]: <https://github.com/imcrazydia/myband/blob/master/none_code/debriefing.md>
 [Planning]: <doc/fase-1/planning.md>
 [Plan van Aanpak]: <doc/fase-1/plan-van-aanpak.md>
-[User stories]: <https://github.com/imcrazydia/myband/blob/master/backlog_sprints.pdf>
+[User stories]: <https://github.com/imcrazydia/myband/blob/master/none_code/backlog_sprints.pdf>
 [Design]: <doc/fase-1/design/design.md/>
-[FO]: <https://github.com/imcrazydia/myband/blob/master/functioneelontwerp.pdf>
-[Flow]: <https://github.com/imcrazydia/myband/blob/master/functioneelontwerp.pdf>
-[Urenschatting]: <https://github.com/imcrazydia/myband/blob/master/backlog_sprints.pdf>
+[FO]: <https://github.com/imcrazydia/myband/blob/master/none_code/functioneelontwerp.pdf>
+[Flow]: <https://github.com/imcrazydia/myband/blob/master/none_code/functioneelontwerp.pdf>
+[Urenschatting]: <https://github.com/imcrazydia/myband/blob/master/none_code/backlog_sprints.pdf>
 [axShare]: <http://w2d1bw.axshare.com/>
 
 #### Fase 2: Realiseren van de opdracht (in sprints)
@@ -54,9 +54,9 @@ Deze fase duurt 3 weken
 | B1-K1-W2 Sprint planning 1, 2 en 3                | TODO | [Trello] / [Trello Tips]             | Link naar Trello met Sprint planningen | |
 | B1-K1-W3 Technisch Ontwerp                        | TODO | [TO]                                 | Markdown of Word/RTF| |
 
-[Backlog]: </doc/fase-2/technisch-ontwerp.md>
+[Backlog]: <https://github.com/imcrazydia/myband/blob/master/none_code/backlog_sprints.pdf>
 [TO]: </doc/fase-2/technisch-ontwerp.md>
-[Trello]: <https://trello.com/b/He6JX83u/myband-sprints>
+[Trello]: https://trello.com/b/k08G5m4f/myband
 [Trello Tips]: <https://blog.trello.com/how-to-scrum-and-trello-for-teams-at-work>
    
 #### Fase 3: Testen en opleveren van het project
