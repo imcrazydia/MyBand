@@ -1,0 +1,27 @@
+.pageTop {
+    background-image: url('../../public/img/people_reading_phone.jpg');
+    background-size: cover; 
+}
+.topText {
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 1em;
+    cursor: default;
+}
+
+.topText button {
+    margin-top: 5px;
+    background-color: #f48c47;
+    border: solid #fff 1px;
+    border-radius: 3px;
+}
+.topText button:hover {
+    background-color: #FF6633;
+}
+.topText button a {
+    color: #fff;
+    font-size: 2em;
+    text-decoration: none;
+}
+

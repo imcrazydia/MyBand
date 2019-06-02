@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #fff;
+  border-bottom: solid 1px;
+  border-color: #CCC;
+}
+
+.topnav a {
+  float: left;
+  color: #000;
+  text-align: center;
+  padding: 14px 5px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color:#f2f2f2;
+  color: #f48c47;
+}
+
+.topnav a.active {
+  color: #f48c47;
+}
+
+.text {
+ display: none;
+}
+
+.icon {
+  display: block;
+  margin-right: 12px;
+  margin-left: 10px;
+}
+
+.registerNav {
+  float: none;
+}
+
+.loginNav {
+  position: absolute;
+  right: 1%;
+}
+
+@media only screen and (min-width: 992px) {
+  .text {
+    display: block;
+    width: 10vw;
+    font-weight: bold;
+  }
+  .text-logo {
+    width: 15vw;
+    height: 7.2vh;
+  }
+
+  .icon {
+    display: none;
+  }
+  
+}
