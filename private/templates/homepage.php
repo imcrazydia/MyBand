@@ -9,8 +9,17 @@
 <?php 
 session_start();
 
-open_connection();
+$pdo = open_connection();
 
-$query = $pdo->query("SELECT * FROM users");
+$query = "SELECT * FROM users";
+
+$statement = $pdo->query($query);
+
+foreach ($statement as $row) {
+    //Nu kunnen we per rij de voor en achternaam op het scherm printen met echo
+    echo $row['id'] . ' ' . $row['username'] . '<br />';
+}
+
+
 
 ?>

@@ -4,14 +4,14 @@ if ($_SERVER['HTTP_HOST'] !== 'localhost') {
 define('DB_SERVER', '127.0.0.1');
 define('DB_USERNAME', 'c3583imcrazydia');
 define('DB_PASSWORD', 'diaquino2001');
-define('DB_NAME', 'c3583wall');
+define('DB_NAME', '');
 } else {
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
-define('DB_NAME', 'wall'); }
+define('DB_NAME', 'myband'); }
 
-/* Attempt to connect to MySQL database */
+/* Attempt to connect to database */
 try{
     $pdo = new PDO("mysql:host=" . DB_SERVER . ";dbname=" . DB_NAME, DB_USERNAME, DB_PASSWORD);
     // Set the PDO error mode to exception
@@ -19,5 +19,4 @@ try{
 } catch(PDOException $e){
     die("ERROR: Could not connect. " . $e->getMessage());
 }
-echo "HALLO";
 ?>

@@ -1,8 +1,8 @@
 <?php 
-open_connection();
-
 //initialize the session
 session_start();
+
+open_connection();
 
 //Check if the user is already logged in, if yes then redirect him to welcome page
 alreadyLogged();
