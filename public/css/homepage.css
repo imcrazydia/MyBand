@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .pageTop {
     background-image: url('../../public/img/people_reading_phone.jpg');
     background-size: cover; 
@@ -5,7 +11,6 @@
 .topText {
     background-color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
     padding: 1em;
     cursor: default;
 }
@@ -23,5 +28,30 @@
     color: #fff;
     font-size: 2em;
     text-decoration: none;
+}
+
+.latest_news {
+    background-color: #F2F2F2;
+    text-align: center;
+    border: solid 2px;
+    border-color: #CCC;
+    padding-bottom: 5%;
+}
+.latest_news h1 {
+    margin-top: 2%;
+}
+.latest_news h4 {
+    color: #999;
+}
+
+.post {
+    background-color: #fff;
+    border: solid 2px;
+    border-color: #CCC;
+    margin-left: 2%;
+    width: 96%;
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 

@@ -9,7 +9,7 @@ function open_connection()
 {
     // Connection to the database: localhost
     $config = require 'db_config.php';
-    $connection = new PDO("mysql:host=" . $config['db_host'] . ";dbname=" . $config['db_name'], $config['db_user'], $config['db_password']);
+    $connection = new PDO("mysql:host=" . $config['db_host'] . ";dbname=" . $config['db_name'], $config['db_user'], $config['db_pass']);
     
     return $connection;
 }
@@ -290,4 +290,5 @@ if(!$result){
   echo '<h2>Verificatie gelukt, je kunt nu <a href="login">inloggen</a>.</h2>';
  }
 }
+
 ?>
