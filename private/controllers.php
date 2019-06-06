@@ -54,6 +54,21 @@ function login_action() {
     //modal
     $currentPage = 'login';
 
+    $loggedin = login($_POST["username"], $_POST["password"]);
+
+    if ($loggedin === true) {
+        header("Location: " . url_to('/'));
+    } else {
+        header("Location: " . url_to('/login?error=' . urlencode($loggedin)));
+    }
+}
+
+function login_form_action() {
+    //modal
+    $currentPage = 'login';
+
+    $error = isset($_GET['error']);
+
     //view
     include "../private/templates/header.php";
     include "../private/templates/login.php";
@@ -61,6 +76,17 @@ function login_action() {
 }
 
 function register_action() {
+    //modal
+    $currentPage = 'register';
+
+    //view
+    include "../private/templates/header.php";
+    include "../private/templates/register.php";
+    include "../private/templates/footer.php";
+}
+
+
+function register_form_action() {
     //modal
     $currentPage = 'register';
 
@@ -78,6 +104,31 @@ function notfound_action() {
     include "../private/templates/404.php";
     include "../private/templates/footer.php";
 
+}
+
+function logout_action()
+{
+    session_start();
+
+    // Unset all of the session variables
+    $_SESSION = array();
+    
+    // Destroy the session.
+    session_destroy();
+    
+    // Redirect to login page
+    header("location: " . url_to('/'));
+    exit;
+}
+
+function profile_action() {
+    //modal
+    $currentPage = 'profile';
+
+    //view
+    include "../private/templates/header.php";
+    include "../private/templates/profile.php";
+    include "../private/templates/footer.php";
 }
 
 

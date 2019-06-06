@@ -33,28 +33,50 @@
 </head>
 <body>
 <div class="topnav">
-  <a href="<?php url_nav(); ?>/" <?php if ($currentPage == 'home'): ?> class="active" <?php endif ?>>
+  <a href="<?php echo url_to('/'); ?>" <?php if ($currentPage == 'home'): ?> class="active" <?php endif ?>>
    <img class="text text-logo" src="../public/img/logo.png" alt="logo">
    <i style='font-size:24px' class='fas icon'>&#xf015;</i>
   </a>
-  <a href="<?php url_nav(); ?>/agenda" <?php if ($currentPage == 'agenda'): ?> class="active" <?php endif ?>>
+  <a href="<?php echo url_to('/agenda'); ?>" <?php if ($currentPage == 'agenda'): ?> class="active" <?php endif ?>>
    <p class="text">Agenda</p>
    <i style='font-size:24px' class='fas icon'>&#xf073;</i>
   </a>
-  <a href="<?php url_nav(); ?>/news" <?php if ($currentPage == 'news'): ?> class="active" <?php endif ?>>
+  <a href="<?php echo url_to('/news'); ?>" <?php if ($currentPage == 'news'): ?> class="active" <?php endif ?>>
    <p class="text">News</p>
    <i style='font-size:24px' class='fas icon'>&#xf0a1;</i>
   </a>
-  <a href="<?php url_nav(); ?>/search" <?php if ($currentPage == 'search'): ?> class="active" <?php endif ?>>
+  <a href="<?php echo url_to('/search'); ?>" <?php if ($currentPage == 'search'): ?> class="active" <?php endif ?>>
    <p class="text">Search</p>
    <i style='font-size:24px' class='fas icon'>&#xf002;</i>
   </a>
-  <a href="<?php url_nav(); ?>/register" class="registerNav">
+  <a href="<?php echo url_to('/register'); ?>" class="registerNav">
    <p class="text">Sign-up</p>
   </a>
-  <a href="<?php url_nav(); ?>/login" <?php if ($currentPage == 'login'): ?> class="active loginNav" <?php endif ?> class="loginNav">
-   <p class="text">Log-in</p>
-   <i style='font-size:24px' class='fas icon'>&#xf2bd;</i>
+ <?php session_start();
+
+$pdo = open_connection();
+
+$log_or_prof = 0;
+
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+  $log_or_prof = $_SESSION['id'];
+}
+
+if ($log_or_prof > 1) {?>
+ <a href="<?php echo url_to('/profile'); ?>" <?php if ($currentPage == 'profile'): ?> class="active login_and_prof_nav" <?php endif ?> class="login_and_prof_nav">
+   <p class="text">Profile</p>
+   <i style='font-size:24px' class='fas'>&#xf007;</i>
   </a>
+<?php } else if ($log_or_prof == 1) { ?>
+  <a href="<?php echo url_to('/profile'); ?>" <?php if ($currentPage == 'profile'): ?> class="active login_and_prof_nav" <?php endif ?> class="login_and_prof_nav">
+   <p class="text">Profile</p>
+   <i style='font-size:24px' class='fas'>&#xf21b;</i>
+  </a>
+<?php } else if ($log_or_prof == 0) { ?>
+  <a href="<?php echo url_to('/login'); ?>" <?php if ($currentPage == 'login'): ?> class="active login_and_prof_nav" <?php endif ?> class="login_and_prof_nav">
+   <p class="text">Log-in</p>
+   <i style='font-size:24px' class='far'>&#xf007;</i>
+  </a>
+<?php } ?>
 </div>
 </body>

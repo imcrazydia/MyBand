@@ -1,8 +1,19 @@
+<?php 
+
+$id = 0;
+
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+  $id = $_SESSION['id'];
+}
+
+?>
+
 <header>
     <img src="../public/img/newsbanner.jpeg" alt="header">
 </header>
 <br>
 
+<?php if ($id == 1) {?>
 <form action="../private/upload_post.php" method="POST">
 <br>
 <input type="text" name="title" placeholder="Write the title here..." />
@@ -14,11 +25,9 @@
 </div>
 </form>
 <br>
+<?php } ?>
 
 <?php
-session_start();
-
-$pdo = open_connection();
 
 $query = "SELECT * FROM news ORDER BY uploaded_on DESC";
 

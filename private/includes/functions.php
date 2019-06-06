@@ -2,7 +2,7 @@
 
 function url_nav()
 {
-    echo "/periode1.4/proj/myband/public";
+    return "/periode1.4/proj/myband/public";
 }
 
 function open_connection()
@@ -21,26 +21,25 @@ function close_connection(&$connection)
 
 function url_to($path)
 {
-    return HOME_URL . $path;
+    return url_nav() . $path;
 }
 
-function login()
+function login($username, $password)
 {
-//Processing form data when form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $pdo = open_connection();
 
   //Check if username is empty
-  if(empty(trim($_POST["username"]))) {
+  if(empty(trim($username))) {
     $username_err = "Please enter username.";
   } else {
-    $username = trim($_POST["username"]);
+    $username = trim($username);
   }
 
   // Check if password is empty
-    if(empty(trim($_POST["password"]))){
+    if(empty(trim($password))){
         $password_err = "Please enter your password.";
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($password);
     }
 
     //Validate credentials
@@ -54,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
 
         //Set parameters
-        $param_username = trim($_POST["username"]);
+        $param_username = trim($username);
 
         //Attempt to execute the prepared statement
         if($stmt->execute()){
@@ -73,20 +72,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION["id"] = $id;
                 $_SESSION["username"] = $username;
 
-                //Redirect user to welcome page
-                echo("<script>console.log('hoi');</script>");
-                header("location: ");
+                return true;
+
               } else {
                 //Display an error message if password is not valid
-                $password_err = "The password you entered was not valid.";
+                return "The password you entered was not valid.";
               }
             }
           } else {
             //Display an error message if username doesn't exist
-            $username_err = "No account found with that username.";
+            return "No account found with that username.";
           }
         } else {
-          echo "Oops! Something went wrong. Please try again later.";
+          return false;
         }
       }
 
@@ -94,24 +92,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       unset($stmt);
     }
 
-  }
+  
 }
 
 function alreadyLogged()
 {
     if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-        header("location: ");
+        header("Location: " . url_to('/'));
         exit;
       }
 }
 
-function register()
+function register($username, $password, $email, $confirm_password)
 {
-    // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     // Validate username
-    if(empty(trim($_POST["username"]))){
+    if(empty(trim($username))){
         $username_err = "Please enter a username.";
     } else{
         // Prepare a select statement
@@ -122,14 +118,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
 
             // Set parameters
-            $param_username = trim($_POST["username"]);
+            $param_username = trim($username);
 
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 if($stmt->rowCount() == 1){
                     $username_err = "This username is already taken.";
                 } else{
-                    $username = trim($_POST["username"]);
+                    $username = trim($username);
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -141,12 +137,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
 
     // Validate password
-    if(empty(trim($_POST["password"]))){
+    if(empty(trim($password))){
         $password_err = "Please enter a password.";
-    } elseif(strlen(trim($_POST["password"])) < 6){
+    } elseif(strlen(trim($password)) < 6){
         $password_err = "Password must have atleast 6 characters.";
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($password);
     }
 
     // Validate confirm password
@@ -231,7 +227,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         // Close statement
         unset($stmt);
     }
-  }
 }
 
 function verify()

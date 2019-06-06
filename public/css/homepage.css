@@ -17,6 +17,7 @@
 
 .topText button {
     margin-top: 5px;
+    padding: 0em 1em 0em 1em;
     background-color: #f48c47;
     border: solid #fff 1px;
     border-radius: 3px;

@@ -1,18 +1,7 @@
 <?php 
-//initialize the session
-session_start();
-
-open_connection();
 
 //Check if the user is already logged in, if yes then redirect him to welcome page
 alreadyLogged();
-
-//Define var and initialize with empty values
-$username = $password = "";
-$username_err = $password_err = "";
-
-//loggin in
-login();
 
 ?>
 
@@ -27,16 +16,17 @@ login();
       <br>
       <h3 id="logoText"><b>WriterStatus</b></h3>
         <h2>Login</h2>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
+        <?php if (!empty($_GET['error'])) {
+            echo $_GET['error'];
+        } ?>
+        <form action="<?php echo url_to('/login') ?>" method="post">
+            <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">
-                <span class="help-block"><?php echo $username_err; ?></span>
+                <input type="text" name="username" class="form-control" value="">
             </div>
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+            <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control">
-                <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">

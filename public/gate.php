@@ -20,10 +20,18 @@ if ('/' === $uri) {
     news_action();
 } else if ('/search' === $uri) {
     search_action();
-} elseif ('/login' === $uri) {
+} elseif ('/login' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
+    login_form_action();
+} elseif ('/login' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     login_action();
-} elseif ('/register' === $uri) {
+} elseif ('/register' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
+    register_form_action();
+} elseif ('/register' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     register_action();
+}  elseif ('/logout' === $uri) {
+    logout_action();
+} elseif ('/profile' === $uri) {
+    profile_action();
 } else {
     notfound_action();
 }

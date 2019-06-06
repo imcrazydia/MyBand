@@ -42,9 +42,9 @@ body {
   float: none;
 }
 
-.loginNav {
+.login_and_prof_nav {
   position: absolute;
-  right: 1%;
+  right: 3%;
 }
 
 @media only screen and (min-width: 992px) {
