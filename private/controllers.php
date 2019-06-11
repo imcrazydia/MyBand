@@ -46,7 +46,7 @@ function search_action() {
 
     //view
     include "../private/templates/header.php";
-    include "../private/templates/news.php";
+    include "../private/templates/search.php";
     include "../private/templates/footer.php";
 }
 

@@ -27,6 +27,10 @@
       echo url_to('/css/about-us.css');
     }?>">
 
+<!-- <script src="<?php //if ($currentPage == 'agenda') {
+  //echo url_to('/js/agenda.js');
+//} ?>"></script> -->
+
   <style>
    @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
   </style>
@@ -65,17 +69,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 if ($log_or_prof > 1) {?>
  <a href="<?php echo url_to('/profile'); ?>" <?php if ($currentPage == 'profile'): ?> class="active login_and_prof_nav" <?php endif ?> class="login_and_prof_nav">
    <p class="text">Profile</p>
-   <i style='font-size:24px' class='fas'>&#xf007;</i>
+   <i style='font-size:24px' class='fas icon'>&#xf007;</i>
   </a>
 <?php } else if ($log_or_prof == 1) { ?>
   <a href="<?php echo url_to('/profile'); ?>" <?php if ($currentPage == 'profile'): ?> class="active login_and_prof_nav" <?php endif ?> class="login_and_prof_nav">
    <p class="text">Profile</p>
-   <i style='font-size:24px' class='fas'>&#xf21b;</i>
+   <i style='font-size:24px' class='fas icon'>&#xf21b;</i>
   </a>
 <?php } else if ($log_or_prof == 0) { ?>
   <a href="<?php echo url_to('/login'); ?>" <?php if ($currentPage == 'login'): ?> class="active login_and_prof_nav" <?php endif ?> class="login_and_prof_nav">
    <p class="text">Log-in</p>
-   <i style='font-size:24px' class='far'>&#xf007;</i>
+   <i style='font-size:24px' class='far icon'>&#xf007;</i>
   </a>
 <?php } ?>
 </div>

@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+  }
+  
+  header img {
+    width: 100vw;
+    border-bottom: solid 1px;
+    border-color: #CCC;
+  }
+  
+  form {
+    background-color: #CCC;
+    margin-left: 2%;
+    width: 96%;
+  }
+  form input {
+    margin-left: 2%;
+    width: 96%;
+  }
+  form textarea {
+    margin-left: 2%;
+    width: 96%;
+  }
+  
+  .buttonBox {
+    padding-top: 1%;
+    padding-bottom: 3em;
+  }
+  
+  .buttonBox button {
+   position: absolute;
+   right: 4%; 
+   padding: 2px 10px 2px 10px;
+   border: solid 1px #CCC;
+   border-radius: 2px;
+   background-color: #fff;
+   font-weight: 400;
+  }
+  
+  .post {
+    background-color: #fff;
+    border: solid 2px;
+    border-color: #CCC;
+    margin-left: 2.5%;
+    width: 95%;
+    text-align: left;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  .post p {
+    font-size: medium;
+  }
+  
+  
+  

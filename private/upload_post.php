@@ -9,8 +9,8 @@ $query = "SELECT * FROM news";
 $errors = array();
  
 // Eerst de data opschonen 
-$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-$post_text = filter_var($_POST['post_text'], FILTER_SANITIZE_STRING);
+$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+$post_text = filter_var($_POST['post_text'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
  
 if(empty($title)){
     // title is leeg

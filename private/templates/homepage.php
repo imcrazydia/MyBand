@@ -35,7 +35,7 @@ foreach ($statement as $row) {
 
 ?>
 
-<div class="latest_news">
+<div class="post_title">
     <h1><b>Latest news</b></h1>
  <div class="post">
   <h2><?php echo htmlspecialchars($row['title']) ?></h2>
@@ -43,7 +43,28 @@ foreach ($statement as $row) {
   <p><?php echo htmlspecialchars($row['post_text']) ?></p>
  </div>
 </div>
-
 <?php
-}
+  }
 ?>
+
+<br>
+
+
+<div class="post_title">
+    <h1 id="recommended"><b>Recommended Users</b></h1>
+<?php 
+  $query = "SELECT * FROM users ORDER BY id DESC LIMIT 2";
+
+  $statement = $pdo->query($query);
+
+  foreach ($statement as $row) {
+?>
+ <div class="post post_writers">
+  <img src="<?php echo ($row['user_pic']) ?>" alt="profile picture">
+  <br>
+  <h2 class="writer_name"><?php echo ($row['username']) ?></h2>
+ </div>
+<?php
+  }
+?>
+</div>
