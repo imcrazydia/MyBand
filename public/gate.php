@@ -1,6 +1,7 @@
 <?php 
 require "../private/includes/functions.php";
-require "../private/controllers.php";
+require "../private/includes/model.php";
+require "../private/includes/controllers.php";
 
 //Determines which controller to call
 $base_uri = substr($_SERVER['SCRIPT_NAME'],0, strpos($_SERVER['SCRIPT_NAME'],'/gate.php'));
@@ -16,8 +17,10 @@ if ('/' === $uri) {
     about_us_action();
 } elseif ('/agenda' === $uri) {
     agenda_action();
-} elseif ('/news' === $uri) {
+} elseif ('/news' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     news_action();
+} elseif ('/news' === $uri  && $_SERVER["REQUEST_METHOD"] == "GET") {
+    news_form_action();
 } else if ('/search' === $uri) {
     search_action();
 } elseif ('/login' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
@@ -32,6 +35,9 @@ if ('/' === $uri) {
     logout_action();
 } elseif ('/profile' === $uri) {
     profile_action();
+} elseif (strpos($uri, '/users/') === 0) {
+    $uri_parts = explode('/', substr($uri, 1));
+    profile_show_action($uri_parts[1]);
 } else {
     notfound_action();
 }

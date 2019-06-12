@@ -45,7 +45,7 @@ $default_pic = "/img/default.png";
             <p>Already have an account? <a href="<?php echo url_to('/login') ?>">Login here</a>.</p>
         </form>
     </div>
-</body>
+
 
 <?php 
 close_connection($connection);

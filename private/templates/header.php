@@ -23,18 +23,17 @@
       echo url_to('/css/register.css');
     } elseif ($currentPage == 'profile') {
       echo url_to('/css/profile.css');
+    } elseif ($currentPage == 'profile_show') {
+      echo url_to('/css/profile.css');
     } elseif ($currentPage == 'about_us') {
       echo url_to('/css/about-us.css');
     }?>">
-
-<!-- <script src="<?php //if ($currentPage == 'agenda') {
-  //echo url_to('/js/agenda.js');
-//} ?>"></script> -->
 
   <style>
    @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
   </style>
 </head>
+
 <body>
 <div class="topnav">
   <a href="<?php echo url_to('/'); ?>" <?php if ($currentPage == 'home'): ?> class="active" <?php endif ?>>
@@ -56,9 +55,8 @@
   <a href="<?php echo url_to('/register'); ?>" class="registerNav">
    <p class="text">Sign-up</p>
   </a>
- <?php session_start();
-
-$pdo = open_connection();
+ <?php 
+session_start();
 
 $log_or_prof = 0;
 
@@ -83,4 +81,3 @@ if ($log_or_prof > 1) {?>
   </a>
 <?php } ?>
 </div>
-</body>

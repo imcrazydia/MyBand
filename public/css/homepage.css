@@ -47,6 +47,12 @@
     color: #999;
 }
 
+.recommended_writers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1em;
+}
+
 #recommended {
     font-size: 30px;
 }
@@ -63,9 +69,20 @@
 }
 
 .post_writers {
+    margin-left: 4%;
+    margin-right: 4%;
     text-align: center;
-    width: 40vw;
-    float: left;
+    width: 92%;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.post_writers img {
+    width: 90%;
+    height: 70%;
+    border-bottom: solid 1px;
+    border-color: #CCC;
+    margin-bottom: -1em;
 }
 
 .writer_name {

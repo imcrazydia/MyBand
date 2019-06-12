@@ -30,12 +30,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <?php } ?>
 
 <?php
-
-$query = "SELECT * FROM events ORDER BY id ASC";
-
-$statement = $pdo->query($query);
-
-foreach ($statement as $row) {
+foreach ($events as $row) {
 ?>
 
 <div class="post">

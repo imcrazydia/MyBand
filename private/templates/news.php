@@ -9,33 +9,30 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 ?>
 
 <header>
-    <img src="../public/img/newsbanner.jpeg" alt="header">
+  <img src="../public/img/newsbanner.jpeg" alt="header">
 </header>
 <br>
 
 <?php if ($id == 1) {?>
-<form action="../private/upload_post.php" method="POST">
-<br>
-<input type="text" name="title" placeholder="Write the title here..." />
-<br><br>
-<textarea name="post_text" rows="4" cols="50" placeholder="Write the post here..."></textarea>
-<br>
-<div class="buttonBox">
-<button type="submit">Submit</button>
-</div>
+<form action="<?php echo url_to('/news') ?>" method="post">
+  <br>
+  <input type="text" name="title" placeholder="Write the title here..." />
+  <br><br>
+  <textarea name="post_text" rows="4" cols="50" placeholder="Write the post here..."></textarea>
+  <br>
+  <span name="post_error"></span>
+  <br>
+  <div class="buttonBox">
+    <button type="submit">Submit</button>
+  </div>
 </form>
 <br>
 <?php } ?>
 
 <?php
+foreach ($news as $row) {
 
-$query = "SELECT * FROM news ORDER BY uploaded_on DESC";
-
-$statement = $pdo->query($query);
-
-foreach ($statement as $row) {
-
-    $time = strtotime($row['uploaded_on']);
+  $time = strtotime($row['uploaded_on']);
 ?>
 
 <div class="post">
@@ -46,5 +43,5 @@ foreach ($statement as $row) {
 <br>
 <?php
 }
+close_connection($connection);
 ?>
- 

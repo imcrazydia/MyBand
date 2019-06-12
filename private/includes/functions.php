@@ -2,7 +2,8 @@
 
 function url_nav()
 {
-    return "/periode1.4/proj/myband/public";
+    return "/periode1.4/proj/myband/public"; //offline
+    //return "/bewijzenmap/periode1.4/proj/myband/public"; //online
 }
 
 function open_connection()
@@ -90,6 +91,10 @@ function login($username, $password)
 
       //Close statment
       unset($stmt);
+    } else if (!empty($username_err)) {
+        return $username_err;
+    } else if (!empty($password_err)) {
+        return $password_err;
     }
 
   
@@ -105,10 +110,13 @@ function alreadyLogged()
 
 function register($username, $password, $email, $confirm_password)
 {
+    $pdo = open_connection();
+    $errors = [];
+    $default_pic = "../public/img/default.png";
 
     // Validate username
     if(empty(trim($username))){
-        $username_err = "Please enter a username.";
+        $errors['username'] = "Please enter a username.";
     } else{
         // Prepare a select statement
         $sql = "SELECT id FROM users WHERE username = :username";
@@ -123,12 +131,12 @@ function register($username, $password, $email, $confirm_password)
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 if($stmt->rowCount() == 1){
-                    $username_err = "This username is already taken.";
+                    $errors['username'] = "This username is already taken.";
                 } else{
                     $username = trim($username);
                 }
             } else{
-                echo "Oops! Something went wrong. Please try again later.";
+                $errors['db'] = "Oops! Something went wrong. Please try again later.";
             }
         }
 
@@ -138,20 +146,20 @@ function register($username, $password, $email, $confirm_password)
 
     // Validate password
     if(empty(trim($password))){
-        $password_err = "Please enter a password.";
+        $errors['password'] = "Please enter a password.";
     } elseif(strlen(trim($password)) < 6){
-        $password_err = "Password must have atleast 6 characters.";
+        $errors['password'] = "Password must have atleast 6 characters.";
     } else{
         $password = trim($password);
     }
 
     // Validate confirm password
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Please confirm password.";
+        $errors['confirm_password'] = "Please confirm password.";
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
+            $errors['confirm_password'] = "Password did not match.";
         }
     }
 
@@ -159,11 +167,11 @@ function register($username, $password, $email, $confirm_password)
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     if(!$email){
     // Ongeldige email
-    $email_err = 'Please enter a email address.';
+    $errors['email'] = 'Please enter a email address.';
     }
 
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($email_err)){
+    if(empty($errors)){
 
         // Prepare an insert statement
         $sql = "INSERT INTO users (username, password, verificatie_code, email, user_pic) VALUES (:username, :password, :verificatie_code, :email, :user_pic)";
@@ -211,11 +219,9 @@ function register($username, $password, $email, $confirm_password)
             );
 
             if(!$result){
-             echo 'Er ging iets fout bij het versturen van de verificatie e-mail';
-             exit;
+                $errors['db'] = 'Er ging iets fout bij het versturen van de verificatie e-mail';
             } else{
-             echo '<h2>Klik de link in de verificatie email om je account te bevestigen</h2>';
-             exit;
+             return true;
             }
 
             } else{
@@ -279,11 +285,52 @@ $data = [
 $result = $statement->execute($data);
 
 if(!$result){
-    echo 'Er ging iets fout bij het opslaan van de gegevens';
-    exit();
+    $errors['db'] = 'Er ging iets fout bij het opslaan van de gegevens';
 } else {
-  echo '<h2>Verificatie gelukt, je kunt nu <a href="login">inloggen</a>.</h2>';
+  echo '<h2>Verificatie gelukt, je kunt nu <a href="login">inloggen</a>.</h2>'; 
  }
 }
+
+function upload_post()
+{
+    $pdo = open_connection();
+    $query = "SELECT * FROM news";
+    
+//Hier slaan we alle fouten in op
+$errors = array();
+ 
+// Eerst de data opschonen 
+$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+$post_text = filter_var($_POST['post_text'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+ 
+if(empty($title)){
+    // title is leeg
+    $errors['title'] = 'You cant upload without a title.';
+}
+
+if(empty($post_text)){
+    // post_text is leeg
+    $errors['post_text'] = 'You cant upload a post without text.';
+}
+
+$sql = 'INSERT INTO news (title, post_text, uploaded_on) VALUES (?, ?, NOW())';
+ 
+//prepared statement
+$statement = $pdo->prepare($sql);
+ 
+$data = array(
+  $title, 
+  $post_text 
+);
+
+if (!empty($title) && !empty($post_text)) {
+$result = $statement->execute($data);
+
+return $result;
+} else {
+    header("Location: " . url_to('/news'));
+}
+
+} 
 
 ?>

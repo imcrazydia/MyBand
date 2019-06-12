@@ -25,11 +25,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <br>
 
 <?php 
-$query = "SELECT * FROM news ORDER BY uploaded_on DESC LIMIT 1";
-
-$statement = $pdo->query($query);
-
-foreach ($statement as $row) {
+foreach ($latest_news as $row) {
 
   $time = strtotime($row['uploaded_on']);
 
@@ -52,19 +48,19 @@ foreach ($statement as $row) {
 
 <div class="post_title">
     <h1 id="recommended"><b>Recommended Users</b></h1>
+    <div class="recommended_writers">
 <?php 
-  $query = "SELECT * FROM users ORDER BY id DESC LIMIT 2";
-
-  $statement = $pdo->query($query);
-
-  foreach ($statement as $row) {
+  foreach ($recommended_writers as $row) {
 ?>
  <div class="post post_writers">
-  <img src="<?php echo ($row['user_pic']) ?>" alt="profile picture">
+  <img src="<?php echo '../public/' . $row['user_pic'] ?>" alt="profile picture">
   <br>
   <h2 class="writer_name"><?php echo ($row['username']) ?></h2>
+  <a href="<?php echo url_to('/users/' . $row['username']); ?>">More info</a>
  </div>
+  
 <?php
   }
 ?>
+</div>
 </div>

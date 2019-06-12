@@ -10,7 +10,7 @@ alreadyLogged();
     .wrapper{ width: 350px; padding: 20px; }
 </style>
 
-<body>
+
     <div class="wrapper">
       <img id="logo" src="../public/img/logo.png" alt="logo" style="width: 110px;">
       <br>
@@ -34,7 +34,7 @@ alreadyLogged();
             <p>Don't have an account? <a href="register">Sign up now</a>.</p>
         </form>
     </div>
-</body>
+
 
 <?php 
 close_connection($connection);
