@@ -8,8 +8,9 @@
             $username = htmlspecialchars($row['username']);
             $bio = htmlspecialchars($row['bio']);
             $website = htmlspecialchars($row['website']);
-        
-
+            $works = htmlspecialchars($row['works']); 
+            $reading_list = htmlspecialchars($row['reading_lists']); 
+            $followers = htmlspecialchars($row['followers']); 
 ?>
 
 
@@ -24,9 +25,18 @@
         <div id="prof_info">
             <h2><b><?php echo $username ?></b></h2>
         </div>
-        <h4></h4>
-        <h4></h4>
-        <h4></h4>
+        <div class="counters">
+            <h4><?php echo $works ?></h4>
+            <h4><?php echo $reading_list ?></h4>
+            <h4><?php echo $followers ?></h4>
+        </div>
+        <br>
+
+        <div class="user_counters">
+            <h4>Works</h4>
+            <h4>Reading list</h4>
+            <h4>Followers</h4>
+        </div>
     </div>
 </div>
 <div id="bio">
@@ -38,5 +48,3 @@
 }
 } 
 }?>
-
-

@@ -1,20 +1,23 @@
 * {
-  padding: 0;
-  margin: 0;
-  font-family: 'Ubuntu', sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
 }
-  
+
 .header_img {
-  background-image: url('../../public/img/agenda-banner.jpg');
-  background-size: cover; 
-  width: 100vw;
-  height: 45vh;
-  border-bottom: solid 1px;
-  border-color: #CCC;
+    background-image: url('../../public/img/profile_banner.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 45vh;
+    border-bottom: solid 1px;
+    border-color: #CCC;
 }
+
 .header_info {
     background-color: rgba(0, 0, 0, 0.308);
     padding: 1em;
+    width: 100vw;
+    height: 45vh;
     cursor: default;
     color: #fff;
     text-align: center;
@@ -23,10 +26,30 @@
 #settingsIcon {
     position: absolute;
     right: 5%;
+    color: #fff;
 }
 
 #prof_pic {
     border-radius: 50%;
     width: 140px;
     height: 140px;
+}
+
+.counters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: -20px;
+    margin-left: 30px;
+    margin-right: 40px;
+}
+
+.user_counters {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#bio {
+    margin-left: 10px;
 }
