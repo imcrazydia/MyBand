@@ -1,5 +1,5 @@
 ## WriterStatus
-www.mijnliveomgeving.com is een website van (Diaquino Fortmeier) waar gebruikers (wattpad nieuws kunnen lezen en bekijken wanneer evenementen worden gehouden, maar ook hun favoriete schrijvers kunnen opzoeken en zien welke boeken hun al hebben geschreven) bedoeld voor (schrijvers/lezers)
+http://25682.hosts2.ma-cloud.nl/bewijzenmap/periode1.4/proj/myband/public/ is een website van (Diaquino Fortmeier) waar gebruikers (wattpad nieuws kunnen lezen en bekijken wanneer evenementen worden gehouden, maar ook hun favoriete schrijvers kunnen opzoeken en zien welke boeken hun al hebben geschreven) bedoeld voor (schrijvers/lezers)
 De website is enigszins te vergelijken met (wattpad.com) of (fanfiction.net) maar toch anders omdat (hier alleen wordt gefocused op de het laatste nieuws en updates, maar ook de status te weergeven van schrijvers)
 
 ### Uniek aan dit concept is: 
