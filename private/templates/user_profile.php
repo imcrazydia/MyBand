@@ -10,7 +10,9 @@
             $website = htmlspecialchars($row['website']);
             $works = htmlspecialchars($row['works']); 
             $reading_list = htmlspecialchars($row['reading_lists']); 
-            $followers = htmlspecialchars($row['followers']); 
+            $followers = htmlspecialchars($row['followers']);
+            $location = htmlspecialchars($row['location']); 
+            $created_on = htmlspecialchars($row['created_on']); 
 ?>
 
 
@@ -40,11 +42,21 @@
     </div>
 </div>
 <div id="bio">
-    <h3><?php echo $bio ?></h3>
+    <h4><?php echo $bio ?></h4>
+    
+
+    <h5><i style='font-size:15px; margin-right: 5px;' class='fas'>&#xf3c5;</i><?php echo $location ?></h5>
+    <h5>Member since: <?php echo $created_on ?></h5>
+    <br>
+
+    <?php if (empty($website)) { ?>
+    <a href="<?php echo $website ?>" target="_blank"><?php echo $website ?></a>
+    <?php } else { ?>
+        <i style='font-size:20px; margin-right: 5px; color:#009973; ' class='fas'>&#xf0ac;</i>
+        <a href="<?php echo $website ?>" target="_blank"><?php echo $website ?></a>
+        <?php } ?>
 </div>
 
-<a href="<?php echo $website ?>" target="_blank"><?php echo $website ?></a>
-<?php 
+<?php }
 }
-} 
-}?>
+} ?>

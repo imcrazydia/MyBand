@@ -37,7 +37,11 @@
 <body>
 <div class="topnav">
   <a href="<?php echo url_to('/'); ?>" <?php if ($currentPage == 'home'): ?> class="active" <?php endif ?>>
-   <img class="text text-logo" src="../public/img/logo.png" alt="logo">
+   <?php if ($currentPage == 'profile_show') { ?>
+    <img class="text text-logo" src="../../public/img/logo.PNG" alt="logo">
+   <?php } else { ?>
+     <img class="text text-logo" src="../public/img/logo.PNG" alt="logo">
+   <?php } ?>
    <i style='font-size:24px' class='fas icon'>&#xf015;</i>
   </a>
   <a href="<?php echo url_to('/agenda'); ?>" <?php if ($currentPage == 'agenda'): ?> class="active" <?php endif ?>>
@@ -52,17 +56,20 @@
    <p class="text">Search</p>
    <i style='font-size:24px' class='fas icon'>&#xf002;</i>
   </a>
-  <a href="<?php echo url_to('/register'); ?>" class="registerNav">
-   <p class="text">Sign-up</p>
-  </a>
- <?php 
+  <?php 
 session_start();
 
 $log_or_prof = 0;
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   $log_or_prof = $_SESSION['id'];
-}
+} 
+
+if ($log_or_prof == 0) { ?>
+ <a href="<?php echo url_to('/register'); ?>" class="registerNav">
+   <p class="text">Sign-up</p>
+  </a>
+<?php } 
 
 if ($log_or_prof > 1) {?>
  <a href="<?php echo url_to('/profile'); ?>" <?php if ($currentPage == 'profile'): ?> class="active login_and_prof_nav" <?php endif ?> class="login_and_prof_nav">

@@ -4,6 +4,7 @@ function url_nav()
 {
     return "/periode1.4/proj/myband/public"; //offline
     //return "/bewijzenmap/periode1.4/proj/myband/public"; //online
+    
 }
 
 function open_connection()

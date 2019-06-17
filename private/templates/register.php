@@ -13,7 +13,7 @@ $default_pic = "/img/default.png";
 
 <body>
     <div class="wrapper">
-      <img id="logo" src="<?php echo url_to('/img/logo.png'); ?>" alt="logo" style="width: 110px;">
+      <img id="logo" src="../public/img/logo.PNG" alt="logo" style="width: 110px;">
       <br>
       <h3 id="logoText"><b>Social Direct Messages</b></h3>
         <h2>Sign Up</h2>
