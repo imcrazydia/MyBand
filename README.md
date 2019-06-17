@@ -26,7 +26,7 @@ Deze fase duurt 3 weken
 | README                                            | ONGOING | [README.md]  (dit document)          | Markdown |
 | B1-K1-W1 Debriefing                               | DONE | [Debriefing]                         | Markdown |
 | B1-K1-W2 Planning                                 | TODO | [Planning]                           | Markdown |
-| B1-K1-W2 Plan van aanpak                          | TODO | [Plan van Aanpak]                    | Markdown of Word/RTF|
+| B1-K1-W2 Plan van aanpak                          | DONE | [Plan van Aanpak]                    | Markdown of Word/RTF|
 | B1-K1-W2 User stories                             | DONE | [User Stories]                       | Markdown of Word/RTF|
 | B1-K1-W2 Functioneel ontwerp                      | DONE | [FO]                                 | Markdown of Word/RTF|
 | B1-K1-W2 Flowchart                                | DONE | [Flow]                               | Afbeelding(en) of geexporteerd uit http://draw.io |
@@ -63,7 +63,7 @@ Deze fase duurt 3 weken
 
 | Milestone  | Status | Link |
 | ------ |  ------ | ------ |
-| B1-K3-W2 Link naar de live omgeving                        |  TODO |  <https://mijnliveomgeving.com> |
+| B1-K3-W2 Link naar de live omgeving                        |  TODO |  <http://25682.hosts2.ma-cloud.nl/bewijzenmap/periode1.4/proj/myband/public/> |
 | B1-K3-W2 Gebruikersdocumentatie / instructie               |  TODO |  [Gebruikers documentatie] |
 | B1-K3-W3 Evaluatie                                         |  TODO |  [Evaluatie] |
 

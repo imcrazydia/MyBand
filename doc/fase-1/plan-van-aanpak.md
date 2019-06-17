@@ -1,3 +1,3 @@
 # Plan van aanpak
 
-Dit mag ook in een los RTF, Word of PDF document geschreven worden.
+Ik zorg gewoon dat ik mijn geplande sprints volg.
