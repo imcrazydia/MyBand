@@ -63,7 +63,7 @@ Deze fase duurt 3 weken
 
 | Milestone  | Status | Link |
 | ------ |  ------ | ------ |
-| B1-K3-W2 Link naar de live omgeving                        |  TODO |  <https://mijnliveomgeving.com> |
+| B1-K3-W2 Link naar de live omgeving                        |  TODO |  <http://25682.hosts2.ma-cloud.nl/bewijzenmap/periode1.4/proj/myband/public/> |
 | B1-K3-W2 Gebruikersdocumentatie / instructie               |  TODO |  [Gebruikers documentatie] |
 | B1-K3-W3 Evaluatie                                         |  TODO |  [Evaluatie] |
 
