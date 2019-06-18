@@ -38,6 +38,10 @@ if ('/' === $uri) {
 } elseif (strpos($uri, '/users/') === 0) {
     $uri_parts = explode('/', substr($uri, 1));
     profile_show_action($uri_parts[1]);
+} elseif ('/edit-profile' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
+    edit_profile_form_action();
+} elseif ('/edit-profile' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
+    edit_profile_action();
 } else {
     notfound_action();
 }

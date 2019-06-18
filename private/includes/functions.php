@@ -2,9 +2,11 @@
 
 function url_nav()
 {
-    return "/periode1.4/proj/myband/public"; //offline
-    //return "/bewijzenmap/periode1.4/proj/myband/public"; //online
-    
+    if ($_SERVER['HTTP_HOST'] !== 'localhost') {
+        return "/bewijzenmap/periode1.4/proj/myband/public"; //online
+      } else {
+        return "/periode1.4/proj/myband/public"; //offline
+      }
 }
 
 function open_connection()
@@ -113,7 +115,7 @@ function register($username, $password, $email, $confirm_password)
 {
     $pdo = open_connection();
     $errors = [];
-    $default_pic = "../public/img/default.png";
+    $default_pic = "/img/default.png";
 
     // Validate username
     if(empty(trim($username))){
@@ -175,7 +177,7 @@ function register($username, $password, $email, $confirm_password)
     if(empty($errors)){
 
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password, verificatie_code, email, user_pic) VALUES (:username, :password, :verificatie_code, :email, :user_pic)";
+        $sql = "INSERT INTO users (username, password, verificatie_code, email, user_pic, created_on) VALUES (:username, :password, :verificatie_code, :email, :user_pic, NOW())";
 
         if($stmt = $pdo->prepare($sql)){
             // Set parameters
@@ -332,6 +334,22 @@ return $result;
     header("Location: " . url_to('/news'));
 }
 
-} 
+}
+
+function prof_edit() 
+{
+  $id = $_SESSION['id'];
+
+if (isset($_POST["submit"])) {
+  $bio = filter_var($_POST['bio'], FILTER_SANITIZE_STRING);
+  $location = filter_var($_POST['location'], FILTER_SANITIZE_STRING);
+  $website = filter_var($_POST['website'], FILTER_SANITIZE_STRING);
+
+  $update = $pdo->query("UPDATE users SET bio = '$bio', location = '$location', website = '$website' WHERE id = $id");
+
+  return $update;
+}
+
+}
 
 ?>

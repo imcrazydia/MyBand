@@ -27,6 +27,10 @@
       echo url_to('/css/profile.css');
     } elseif ($currentPage == 'about_us') {
       echo url_to('/css/about-us.css');
+    } elseif ($currentPage == 'about_us') {
+      echo url_to('/css/about-us.css');
+    } elseif ($currentPage == 'edit-profile') {
+      echo url_to('/css/edit_profile.css');
     }?>">
 
   <style>

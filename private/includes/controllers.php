@@ -22,7 +22,6 @@ function about_us_action() {
   //view
   include "../private/templates/header.php";
   include "../private/templates/about-us.php";
-  include "../private/templates/footer.php";
 }
 
 function agenda_action() {
@@ -180,6 +179,31 @@ function profile_show_action($username) {
     include "../private/templates/header.php";
     include "../private/templates/user_profile.php";
     include "../private/templates/footer.php";
+}
+
+function edit_profile_form_action() {
+    $currentPage = 'edit-profile';
+    
+    //modal
+    $profile_edit = get_user_info();
+    $error = isset($_GET['error']);
+
+    //view
+    include "../private/templates/header.php";
+    include "../private/templates/edit_profile.php";
+    include "../private/templates/footer.php";
+}
+
+function edit_profile_action() {
+    $currentPage = 'edit-profile';
+
+    $prof_edit = prof_edit($_POST["bio"], $_POST["location"], $_POST["website"]);
+   
+    if ($prof_edit) {
+        header("Location: " . url_to('/profile'));
+    } else {
+        header("Location: " . url_to('/edit-profile?error=' . urlencode($prof_edit)));
+    }
 }
 
 ?>

@@ -1,0 +1,11 @@
+footer {
+    text-align: center;
+    padding-top: 3em;
+    border-bottom: solid 3px #ccc;
+}
+
+.foot {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}

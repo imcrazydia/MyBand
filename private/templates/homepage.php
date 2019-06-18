@@ -12,14 +12,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <div class="topText">
     <h1><b>Discover the status of your favorite writer</b></h1>
     <h3>And check the latest news of Wattpad</h3>
-    <?php if ($showButton == 0) {?>
-  <p><?php  echo "Welcome" . ' ' . $_SESSION['username']; ?></p>
-      <?php } ?>
     <?php if ($showButton == 1) {?>
       <button><a href="<?php echo url_to('/register'); ?>">Register now!</a></button>
-    <?php } else if ($showButton == 0) { ?>
-      <button><a href="<?php echo url_to('/logout'); ?>">Logout</a></button>
-      <?php } ?>
+    <?php } ?>
 </div>
 </div>
 <br>

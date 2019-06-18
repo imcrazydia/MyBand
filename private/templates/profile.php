@@ -4,8 +4,8 @@
     while($row = $profile_info->fetch()){
 
         $id = $row['id'];
-?>
-<?php if ($id == $_SESSION['id']) {
+        
+ if ($id == $_SESSION['id']) {
      $user_pic = $row["user_pic"];
      $username = htmlspecialchars($row['username']);
      $bio = htmlspecialchars($row['bio']);
@@ -17,10 +17,18 @@
      $created_on = htmlspecialchars($row['created_on']); 
 ?>
 
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="<?php echo url_to('/edit-profile'); ?>">Edit profile</a>
+    <a href="<?php echo url_to('/logout'); ?>">Log out</a>
+  </div>
+</div>
+
 <div class="header_img">
     <!-- Profiel Picture, Username and edit profile button-->
     <div class="header_info">
-        <a href="#settings" id="settingsIcon"><i style='font-size:24px' class='fas'>&#xf013;</i></a>
+        <a onclick="openNav()" id="settingsIcon"><i style='font-size:24px' class='fas'>&#xf013;</i></a>
 
         <img id="prof_pic" src="<?php echo url_to($user_pic) ?>" />
         <br>
@@ -61,3 +69,4 @@
 <?php }
 }
 } ?>
+<script src="<?php echo url_to('/js/profile.js')?>"></script>
