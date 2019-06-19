@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 require "../private/includes/functions.php";
 require "../private/includes/model.php";
 require "../private/includes/controllers.php";

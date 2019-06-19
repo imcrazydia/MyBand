@@ -336,20 +336,33 @@ return $result;
 
 }
 
-function prof_edit() 
+function prof_edit($id,$bio,$location,$website) 
 {
-  $id = $_SESSION['id'];
+  $pdo = open_connection();
 
-if (isset($_POST["submit"])) {
-  $bio = filter_var($_POST['bio'], FILTER_SANITIZE_STRING);
-  $location = filter_var($_POST['location'], FILTER_SANITIZE_STRING);
-  $website = filter_var($_POST['website'], FILTER_SANITIZE_STRING);
+  $bio = filter_var($bio, FILTER_SANITIZE_STRING);
+  $location = filter_var($location, FILTER_SANITIZE_STRING);
+  $website = filter_var($website, FILTER_SANITIZE_STRING);
 
-  $update = $pdo->query("UPDATE users SET bio = '$bio', location = '$location', website = '$website' WHERE id = $id");
+  $sql = "UPDATE users SET bio = ?, location = ?, website = ? WHERE id = ?";
 
+  $statement = $pdo->prepare($sql);
+ 
+$data = array(
+  $bio, 
+  $location,
+  $website,
+  $id 
+);
+
+$update = $statement->execute($data);
+
+if (!$update) {
+    $error = $pdo->errorInfo();
+    return $error[2];
+}else {
   return $update;
-}
-
+ }
 }
 
 ?>

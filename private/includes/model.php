@@ -50,5 +50,47 @@ function get_user_info()
 
 }
 
+function search_database($searchterm)
+{
+    $results = [];
+    $pdo = open_connection();
+
+    //Zoeken naar stories
+    /*$sql = 'SELECT * FROM movies WHERE movie_title LIKE :search_term OR movie_genre LIKE :search_term';
+    
+    $statement = $pdo->prepare($sql);
+    $params = [
+        'search_term' => '%' . $searchterm . '%'
+    ];
+
+    $statement->execute($params);
+    foreach ($statement as $movie) {
+        $row = [];
+        $row['type'] = 'movie';
+        $row['title'] = $movie['movie_title'];
+        $row['description'] = 'A movie with genre ' . $movie['movie_genre'];
+        $row['ID'] = $movie['ID'];
+        $results['movie'][] = $row;
+    }*/
+
+    //Zoeken naar users
+    $sql = 'SELECT * FROM users WHERE username LIKE :search_term';
+    
+    $statement = $pdo->prepare($sql);
+    $params = [
+        'search_term' => '%' . $searchterm . '%'
+    ];
+
+    $statement->execute($params);
+    foreach ($statement as $user) {
+        $row = [];
+        $row['type'] = 'users';
+        $row['username'] = $user['username'];
+        $results['users'][] = $row;
+    }
+
+    return $results;
+}
+
 
 ?>

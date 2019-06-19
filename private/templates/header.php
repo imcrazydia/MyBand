@@ -61,7 +61,6 @@
    <i style='font-size:24px' class='fas icon'>&#xf002;</i>
   </a>
   <?php 
-session_start();
 
 $log_or_prof = 0;
 

@@ -67,8 +67,12 @@ function news_form_action() {
 }
 
 function search_action() {
-    //modal
     $currentPage = 'search';
+
+    $searchterm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
+    
+    //modal
+    $searchresults = search_database($searchterm);
 
     //view
     include "../private/templates/header.php";
@@ -197,9 +201,9 @@ function edit_profile_form_action() {
 function edit_profile_action() {
     $currentPage = 'edit-profile';
 
-    $prof_edit = prof_edit($_POST["bio"], $_POST["location"], $_POST["website"]);
+    $prof_edit = prof_edit($_SESSION["id"], $_POST["bio"], $_POST["location"], $_POST["website"]);
    
-    if ($prof_edit) {
+    if ($prof_edit === true) {
         header("Location: " . url_to('/profile'));
     } else {
         header("Location: " . url_to('/edit-profile?error=' . urlencode($prof_edit)));

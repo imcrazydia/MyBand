@@ -1,0 +1,49 @@
+.search-bar{
+    padding: 10px 0;
+}
+
+.search-bar form {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-gap: 10px; 
+}
+
+.search-bar button {
+    padding: 5px;
+    background: #333;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.result {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.result h2 {
+    margin-bottom: 5px;
+}
+
+.result-user {
+    border: solid 1px #ccc;
+}
+
+.result-story {
+    border: solid 1px #ccc;
+}
+
+#story_results {
+    padding: 5px;
+    background-color: #007947;
+}
+
+#user_results {
+    padding: 5px;
+    background-color: aquamarine;
+}
