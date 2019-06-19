@@ -1,5 +1,5 @@
 .search-bar{
-    padding: 10px 0;
+    padding: 10px 10px;
 }
 
 .search-bar form {
@@ -16,34 +16,67 @@
     text-align: center;
 }
 
-.results {
+/*.results {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+}*/
+
+.all_user_results {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    box-shadow: #ccc 2px 2px 2px 2px;
 }
 
 .result {
     padding: 10px;
-    margin-bottom: 20px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: solid 1px #ccc;
 }
 .result h2 {
     margin-bottom: 5px;
 }
 
-.result-user {
-    border: solid 1px #ccc;
+.story_results {
+    padding: 5px;
 }
 
 .result-story {
     border: solid 1px #ccc;
 }
 
-#story_results {
-    padding: 5px;
-    background-color: #007947;
+.user_title {
+    box-shadow: #ccc 1px 1px 1px 2px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
 }
 
-#user_results {
-    padding: 5px;
-    background-color: aquamarine;
+.result-user {
+    border: solid 1px #ccc;
 }
+
+.user_results { 
+    overflow: hidden;
+    text-align: center;
+}
+
+.user_results img {
+    border: solid 1px #ccc;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+.user_results a {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+}
+
+
+

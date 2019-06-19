@@ -6,10 +6,11 @@
         </form>
 
 <h1>Search results</h1>
+<?php if (!empty($searchterm)) { ?>
     <p>Er zijn <?php echo count($searchresults) ?> zoekresultaten voor "<?php echo $searchterm ?>"</p>
     <br>
     <div class="results">
-    <!-- <div id="movie_results">
+    <!-- <div class="movie_results">
     <h2>Movies</h2>
   <?php //foreach ($searchresults['movie'] as $result): ?>
   <div class="result result-<?php //echo $result['type'] ?>">
@@ -19,14 +20,24 @@
     <?php //endforeach; ?>
     </div> -->
 
-    <div id="user_results">
+    <div class="user_results">
+      <div class="user_title">
         <h2>Users</h2>
+      </div>
+      <div class="all_user_results">
     <?php foreach ($searchresults['users'] as $result): ?>
+    <a href="<?php echo url_to('/users/' . $result['username']) ?>">
   <div class="result result-<?php echo $result['type'] ?>">
-    <a href="<?php echo url_to('/users/' . $result['username']) ?>"><h2><?php echo $result['username'] ?></h2></a>
-    <p><?php echo $result['description'] ?></p>
-    </div>
+  <img src="<?php echo url_to($result['user_pic']) ?>" />
+  <div>
+    <h3><?php echo $result['username'] ?></h3>
+    <p><?php echo $result['works'] ?> Books - <?php echo $result['followers'] ?> Followers</p>
+  </div>
+  </div>
+  </a>
     <?php endforeach; ?>
-</div>
+    </div>
+  </div>
 
 </div>
+<?php } ?>

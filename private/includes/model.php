@@ -85,7 +85,10 @@ function search_database($searchterm)
     foreach ($statement as $user) {
         $row = [];
         $row['type'] = 'users';
+        $row['user_pic'] = $user['user_pic'];
         $row['username'] = $user['username'];
+        $row['works'] = $user['works'];
+        $row['followers'] = $user['followers'];
         $results['users'][] = $row;
     }
 
