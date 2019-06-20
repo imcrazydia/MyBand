@@ -17,8 +17,10 @@ if ('/' === $uri) {
     homepage_action();
 } elseif ('/about-us' === $uri) {
     about_us_action();
-} elseif ('/agenda' === $uri) {
+} elseif ('/agenda' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     agenda_action();
+} elseif ('/agenda' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
+    agenda_form_action();
 } elseif ('/news' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     news_action();
 } elseif ('/news' === $uri  && $_SERVER["REQUEST_METHOD"] == "GET") {

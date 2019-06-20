@@ -27,11 +27,22 @@ function about_us_action() {
 function agenda_action() {
     $currentPage = 'agenda';
 
-    //modal
-    $events = get_events();
+    $show_agenda = upload_agenda($_POST['title'], $_POST['datum'], $_POST['details']);
 
-
+    if($show_agenda){
+        sleep(1);
+        header("Location: " . url_to('/agenda'));
+    } else {
+    $statusMsg = "There was a problem uploading this event.";
+    }
     
+}
+
+function agenda_form_action() {
+    $currentPage = 'agenda';
+
+    //modal
+    $events = get_events();    
 
     //view
     include "../private/templates/header.php";

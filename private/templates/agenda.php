@@ -14,7 +14,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 <br>
 
 <?php if ($id == 1) {?>
-<form action="../private/upload_agenda.php" method="POST">
+<form action="<?php echo url_to('/agenda') ?>" method="POST">
 <br>
 <input type="text" name="title" placeholder="Write the title here..." />
 <br><br>

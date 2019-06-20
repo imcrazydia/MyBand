@@ -461,4 +461,50 @@ function add_story($story_title, $story_description, $story_user, $fileName) {
     }
 }
 
+function upload_agenda($title, $datum, $details)
+{
+  $pdo = open_connection();
+
+$query = "SELECT * FROM events";
+
+//Hier slaan we alle fouten in op
+$errors = array();
+ 
+// Eerst de data opschonen 
+$title = filter_var($_POST['title'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+$datum = filter_var($_POST['datum'], FILTER_SANITIZE_STRING);
+$details = filter_var($_POST['details'], FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+ 
+if(empty($title)){
+    // title is leeg
+    $errors['title'] = 'You cant upload an event without a title.';
+}
+
+if(empty($details)){
+    // post_text is leeg
+    $errors['details'] = 'You cant upload an event without details.';
+}
+
+if(empty($datum)){
+    // post_text is leeg
+    $errors['datum'] = 'You cant upload an event without a date.';
+}
+
+$sql = 'INSERT INTO events (title, datum, details) VALUES (?, ?, ?)';
+ 
+//prepared statement
+$statement = $pdo->prepare($sql);
+ 
+$data = array(
+  $title, 
+  $datum,
+  $details
+);
+
+
+$statement->execute($data);
+
+return $statement;
+}
+
 ?>
