@@ -23,7 +23,7 @@ if ('/' === $uri) {
     news_action();
 } elseif ('/news' === $uri  && $_SERVER["REQUEST_METHOD"] == "GET") {
     news_form_action();
-} else if ('/search' === $uri) {
+} else if ('/search' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
     search_action();
 } elseif ('/login' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
     login_form_action();
@@ -44,6 +44,10 @@ if ('/' === $uri) {
     edit_profile_form_action();
 } elseif ('/edit-profile' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     edit_profile_action();
+} elseif ('/add-story' === $uri && $_SERVER["REQUEST_METHOD"] == "GET") {
+    add_story_form_action();
+} elseif ('/add-story' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
+    add_story_action();
 } else {
     notfound_action();
 }

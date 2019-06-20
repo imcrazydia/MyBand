@@ -69,8 +69,11 @@ function news_form_action() {
 function search_action() {
     $currentPage = 'search';
 
+    $searchterm = "";
+    if (isset($_GET['term'])){
     $searchterm = filter_var($_GET['term'], FILTER_SANITIZE_STRING);
-    
+    }
+
     //modal
     $searchresults = search_database($searchterm);
 
@@ -166,6 +169,7 @@ function profile_action() {
     
     //modal
     $profile_info = get_user_info();
+    $stories = get_stories();
 
     //view
     include "../private/templates/header.php";
@@ -178,6 +182,7 @@ function profile_show_action($username) {
     
     //modal
     $profile_user_info = get_user_info($username);
+    $stories = get_stories();
 
     //view
     include "../private/templates/header.php";
@@ -188,7 +193,7 @@ function profile_show_action($username) {
 function edit_profile_form_action() {
     $currentPage = 'edit-profile';
     
-    //modal
+    //function
     $profile_edit = get_user_info();
     $error = isset($_GET['error']);
 
@@ -201,12 +206,37 @@ function edit_profile_form_action() {
 function edit_profile_action() {
     $currentPage = 'edit-profile';
 
-    $prof_edit = prof_edit($_SESSION["id"], $_POST["bio"], $_POST["location"], $_POST["website"]);
+    $prof_edit = prof_edit($_SESSION["id"], $_POST["bio"], $_POST["location"], $_POST["website"], $_SESSION["id"], $_POST["file"]);
    
     if ($prof_edit === true) {
         header("Location: " . url_to('/profile'));
     } else {
-        header("Location: " . url_to('/edit-profile?error=' . urlencode($prof_edit)));
+        header("Location: " . url_to('/edit-profile?error=' . urlencode("Please choose another image")));
+    }
+}
+
+
+function add_story_form_action() {
+    $currentPage = 'add-story';
+
+    //function
+    $error = isset($_GET['error']);
+
+    //view
+    include "../private/templates/header.php";
+    include "../private/templates/add-story.php";
+    include "../private/templates/footer.php";
+}
+
+function add_story_action() {
+    $currentPage = 'add-story';
+
+    $added_story = add_story($_POST["story_title"], $_POST["story_description"], $_SESSION["username"], $_POST["file"]);
+   
+    if ($added_story === true) {
+        header("Location: " . url_to('/profile'));
+    } else {
+        header("Location: " . url_to('/add-story?error=' . urlencode("something went wrong")));
     }
 }
 

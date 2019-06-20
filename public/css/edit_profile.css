@@ -3,3 +3,16 @@ body {
     padding: 0;
     text-align: center;
 }
+
+.prof_pic {
+    border: solid 1px #ccc;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+}
+
+#button2 {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}

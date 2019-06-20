@@ -1,3 +1,7 @@
+* {
+    font-family: 'Ubuntu', sans-serif;
+}
+
 .search-bar{
     padding: 10px 10px;
 }
@@ -29,25 +33,25 @@
     box-shadow: #ccc 2px 2px 2px 2px;
 }
 
+.all_story_results {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    box-shadow: #ccc 2px 2px 2px 2px;
+}
+
 .result {
     padding: 10px;
     width: 90%;
     margin-right: 5%;
     margin-left: 5%;
     display: grid;
+    grid-gap: 10px;
     grid-template-columns: 1fr 1fr;
     border-bottom: solid 1px #ccc;
 }
 .result h2 {
     margin-bottom: 5px;
-}
-
-.story_results {
-    padding: 5px;
-}
-
-.result-story {
-    border: solid 1px #ccc;
 }
 
 .user_title {
@@ -57,7 +61,18 @@
     margin-left: 5%;
 }
 
-.result-user {
+.story_title {
+    box-shadow: #ccc 1px 1px 1px 2px;
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+    text-align: center;
+}
+
+.result-users {
+    border: solid 1px #ccc;
+}
+.result-stories {
     border: solid 1px #ccc;
 }
 
@@ -65,18 +80,37 @@
     overflow: hidden;
     text-align: center;
 }
+.story_results { 
+    overflow: hidden;
+}
 
-.user_results img {
+.user_results .user_pic {
     border: solid 1px #ccc;
     border-radius: 50%;
     width: 100px;
     height: 100px;
 }
+.story_results .story_cover {
+    width: 25vw;
+    height: 140px;
+}
+
+
 .user_results a {
     text-decoration: none;
     color: #000;
     font-size: 12px;
 }
+.story_results a {
+    text-decoration: none;
+    color: #000;
+    font-size: 12px;
+}
+
+textarea {
+    border: none;
+  }
+
 
 
 

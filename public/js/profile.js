@@ -5,3 +5,9 @@ function openNav() {
   function closeNav() {
     document.getElementById("myNav").style.width = "0%";
   }
+
+  document.getElementById('description').addEventListener('focus', function()
+  {
+    document.getElementById('description').blur();
+  });
+  document.getElementById('description').style.cursor = 'default';

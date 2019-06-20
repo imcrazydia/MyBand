@@ -13,7 +13,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <h1><b>Discover the status of your favorite writer</b></h1>
     <h3>And check the latest news of Wattpad</h3>
     <?php if ($showButton == 1) {?>
-      <button><a href="<?php echo url_to('/register'); ?>">Register now!</a></button>
+      <a href="<?php echo url_to('/register'); ?>" role="button">Register now!</a>
     <?php } ?>
 </div>
 </div>

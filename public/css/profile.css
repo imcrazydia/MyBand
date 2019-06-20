@@ -51,8 +51,43 @@
     margin-right: 10px;
 }
 
+#bio_box {
+  border-bottom: solid 1px #ccc;
+}
+
 #bio {
     margin-left: 10px;
+    padding-bottom: 1em;
+}
+
+.story {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.story_content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: solid 1px #ccc;
+}
+
+#story_cover {
+  width: 30vw;
+  height: 140px;
+}
+
+.content {
+  margin-left: -4em;
+}
+
+#title {
+  margin-top: -.1em;
+}
+
+textarea {
+  border: none;
 }
 
 .overlay {

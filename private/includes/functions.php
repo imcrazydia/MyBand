@@ -115,7 +115,7 @@ function register($username, $password, $email, $confirm_password)
 {
     $pdo = open_connection();
     $errors = [];
-    $default_pic = "/img/default.png";
+    $default_pic = "prof_pic_uploads/default.png";
 
     // Validate username
     if(empty(trim($username))){
@@ -336,15 +336,48 @@ return $result;
 
 }
 
-function prof_edit($id,$bio,$location,$website) 
+function prof_edit($id,$bio,$location,$website, $fileName) 
 {
   $pdo = open_connection();
 
   $bio = filter_var($bio, FILTER_SANITIZE_STRING);
   $location = filter_var($location, FILTER_SANITIZE_STRING);
   $website = filter_var($website, FILTER_SANITIZE_STRING);
+  $targetDir = "prof_pic_uploads/";
+  $fileName = basename($_FILES["file"]["name"]);
+  $targetFilePath = $targetDir . $fileName;
+  $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
 
-  $sql = "UPDATE users SET bio = ?, location = ?, website = ? WHERE id = ?";
+  if (empty($fileName)) {
+    $sql = "UPDATE users SET bio = ?, location = ?, website = ? WHERE id = ?";
+
+    $statement = $pdo->prepare($sql);
+   
+  $data = array(
+    $bio, 
+    $location,
+    $website,
+    $id 
+  );
+  
+  $update = $statement->execute($data);
+  
+  if (!$update) {
+      $error = $pdo->errorInfo();
+      return $error[2];
+  }else {
+    return $update;
+   }
+  } else {
+
+  if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+    // Allow certain file formats
+    $allowTypes = array('jpg','png','jpeg','gif','pdf');
+    if(in_array($fileType, $allowTypes)){
+        // Upload file to server
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+
+  $sql = "UPDATE users SET bio = ?, location = ?, website = ?, user_pic = ? WHERE id = ?";
 
   $statement = $pdo->prepare($sql);
  
@@ -352,6 +385,7 @@ $data = array(
   $bio, 
   $location,
   $website,
+  $targetFilePath,
   $id 
 );
 
@@ -363,6 +397,66 @@ if (!$update) {
 }else {
   return $update;
  }
+
+}else{
+$statusMsg = "Sorry, there was an error uploading your file.";
+}
+}else{
+$statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+}
+}else{
+$statusMsg = 'Please select a file to upload.';
+}
+  }
+
+}
+
+function add_story($story_title, $story_description, $story_user, $fileName) {
+    $pdo = open_connection();
+
+    $story_title = filter_var($story_title, FILTER_SANITIZE_STRING);
+    $story_description = filter_var($story_description, FILTER_SANITIZE_STRING);
+    $targetDir = "story_cover_uploads/";
+    $fileName = basename($_FILES["file"]["name"]);
+    $targetFilePath = $targetDir . $fileName;
+    $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
+
+    if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+        // Allow certain file formats
+        $allowTypes = array('jpg','png','jpeg','gif','pdf');
+        if(in_array($fileType, $allowTypes)){
+            // Upload file to server
+            if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+    
+      $sql = "INSERT INTO stories SET story_title = ?, story_description = ?, story_user = ?, story_cover = ?";
+    
+      $statement = $pdo->prepare($sql);
+     
+    $data = array(
+      $story_title, 
+      $story_description,
+      $story_user,
+      $targetFilePath
+    );
+    
+    $update = $statement->execute($data);
+    
+    if (!$update) {
+        $error = $pdo->errorInfo();
+        return $error[2];
+    }else {
+      return $update;
+     }
+    
+    }else{
+    $statusMsg = "Sorry, there was an error uploading your file.";
+    }
+    }else{
+    $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+    }
+    }else{
+    $statusMsg = 'Please select a file to upload.';
+    }
 }
 
 ?>

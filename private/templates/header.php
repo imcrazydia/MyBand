@@ -31,6 +31,8 @@
       echo url_to('/css/about-us.css');
     } elseif ($currentPage == 'edit-profile') {
       echo url_to('/css/edit_profile.css');
+    } elseif ($currentPage == 'add-story') {
+      echo url_to('/css/add-story.css');
     }?>">
 
   <style>

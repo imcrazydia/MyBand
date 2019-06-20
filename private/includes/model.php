@@ -56,7 +56,9 @@ function search_database($searchterm)
     $pdo = open_connection();
 
     //Zoeken naar stories
-    /*$sql = 'SELECT * FROM movies WHERE movie_title LIKE :search_term OR movie_genre LIKE :search_term';
+    $sql = 'SELECT * FROM stories WHERE story_title LIKE :search_term OR
+     story_user LIKE :search_term OR
+     story_description LIKE :search_term';
     
     $statement = $pdo->prepare($sql);
     $params = [
@@ -66,12 +68,13 @@ function search_database($searchterm)
     $statement->execute($params);
     foreach ($statement as $movie) {
         $row = [];
-        $row['type'] = 'movie';
-        $row['title'] = $movie['movie_title'];
-        $row['description'] = 'A movie with genre ' . $movie['movie_genre'];
-        $row['ID'] = $movie['ID'];
-        $results['movie'][] = $row;
-    }*/
+        $row['type'] = 'stories';
+        $row['story_cover'] = $movie['story_cover'];
+        $row['story_title'] = $movie['story_title'];
+        $row['story_user'] = $movie['story_user'];
+        $row['story_description'] = $movie['story_description'];
+        $results['stories'][] = $row;
+    }
 
     //Zoeken naar users
     $sql = 'SELECT * FROM users WHERE username LIKE :search_term';
@@ -95,5 +98,14 @@ function search_database($searchterm)
     return $results;
 }
 
+function get_stories()
+{
+  $pdo = open_connection();
+
+  $query = "SELECT * FROM stories";
+  $statement = $pdo->query($query);
+
+  return $statement;
+}
 
 ?>

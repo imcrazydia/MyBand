@@ -1,0 +1,78 @@
+.pageTop {
+    background-image: url('../../public/img/about_us1.jpg');
+    background-size: cover; 
+}
+.topText {
+    background-color: rgba(255, 153, 0, 0.7);
+    text-align: center;
+    padding: 1em;
+    cursor: default;
+    color: #fff;
+    padding-bottom: 1.5em;
+}
+
+.topText button {
+    margin-top: 5px;
+    padding: 0em 1em 0em 1em;
+    background-color: #fff;
+    border: solid #fff 1px;
+    border-radius: 3px;
+}
+.topText button a {
+    color: #f48c47;
+    font-size: 2em;
+    text-decoration: none;
+}
+
+.pageSecond {
+    background-image: url('../../public/img/about_us2.jpg');
+    background-size: cover; 
+}
+.secondText {
+    background-color: rgba(0, 153, 153, 0.7);
+    text-align: center;
+    padding: 1em;
+    cursor: default;
+    color: #fff;
+}
+
+.pageThird {
+    background-image: url('../../public/img/about_us3.jpg');
+    background-size: cover; 
+}
+.thirdText {
+    background-color: rgba(255, 153, 0, 0.7);
+    text-align: center;
+    padding: 1em;
+    cursor: default;
+    color: #fff;
+    padding-top: 4em;
+    padding-bottom: 4em;
+}
+
+.pageFourth {
+    background-image: url('../../public/img/about_us4.jpg');
+    background-size: cover; 
+}
+.fourthText {
+    background-color: rgba(0, 153, 153, 0.7);
+    text-align: center;
+    padding: 1em;
+    cursor: default;
+    color: #fff;
+}
+
+
+.fifthText {
+    background-color: #fff;
+    text-align: center;
+    padding: 1em;
+    cursor: default;
+    color: #000;
+}
+.fifthText h1 {
+    color: rgba(0, 153, 153);
+}
+.fifthText p b {
+    color: #f48c47;
+}
