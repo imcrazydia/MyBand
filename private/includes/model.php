@@ -57,8 +57,7 @@ function search_database($searchterm)
 
     //Zoeken naar stories
     $sql = 'SELECT * FROM stories WHERE story_title LIKE :search_term OR
-     story_user LIKE :search_term OR
-     story_description LIKE :search_term';
+     story_user LIKE :search_term';
     
     $statement = $pdo->prepare($sql);
     $params = [
