@@ -33,7 +33,7 @@ if ('/' === $uri) {
     register_form_action();
 } elseif ('/register' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     register_action();
-}  elseif ('/logout' === $uri) {
+} elseif ('/logout' === $uri) {
     logout_action();
 } elseif ('/profile' === $uri) {
     profile_action();
@@ -48,6 +48,8 @@ if ('/' === $uri) {
     add_story_form_action();
 } elseif ('/add-story' === $uri && $_SERVER["REQUEST_METHOD"] == "POST") {
     add_story_action();
+} elseif ('/verify' === $uri) {
+    verify_action();
 } else {
     notfound_action();
 }

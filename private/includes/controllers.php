@@ -240,4 +240,22 @@ function add_story_action() {
     }
 }
 
+function verify_action() {
+    $currentPage = 'verify';
+
+    //function
+    $verified = verify();
+
+    if ($verified === true) {
+        header("Location: " . url_to('/login'));
+    } else {
+        header("Location: " . url_to('/verify?error=' . urlencode("something went wrong")));
+    }
+
+    //view
+    include "../private/templates/header.php";
+    include "../private/templates/verify.php";
+    include "../private/templates/footer.php";
+}
+
 ?>

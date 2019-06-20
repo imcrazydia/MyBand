@@ -200,15 +200,15 @@ function register($username, $password, $email, $confirm_password)
                 // Redirect to login page
                 //header("location: login.php");
 
-            $verify_link = 'http://25682.hosts2.ma-cloud.nl/bewijzenmap/periode1.4/proj/myband/private/verify.php?code=' . $param_verificatie . '&e=' . $_POST['email'];
+            $verify_link = 'http://25682.hosts2.ma-cloud.nl/bewijzenmap/periode1.4/proj/myband/public/verify?code=' . $param_verificatie . '&e=' . $_POST['email'];
 
             $email_to = $_POST['email'];
             $email_from = '25682@ma-web.nl';
-            $subject = 'Verificatie The Wall';
+            $subject = 'Verification for WriterStatus';
 
             // Hier maken we een heel kort email bericht
-            $message = 'Beste ' . $_POST['username'] . ', ' . "\n" . 'Iemand gebruikt dit email address om in te loggen op onze site,'
-            . "\n" . 'als u dit bent klik op deze link om je account te bevestigen: ' . "\n" .  $verify_link ;
+            $message = 'An account named: ' . $_POST['username'] . ', ' . "\n" . 'as been created on our site with this email.
+            If this is you then use this link to verify your account: ' . "\n" .  $verify_link ;
 
             // Het afzender en reply-to adres moeten we in een speciale $headers string zetten
             $headers = 'From:' .  $email_from . "\r\n";
@@ -240,13 +240,15 @@ function register($username, $password, $email, $confirm_password)
 
 function verify()
 {
+  $pdo = open_connection();
+
     // In de superglobal $_GET zitten alle parameters in de url
 $verificatie_code = filter_var($_GET['code'], FILTER_SANITIZE_STRING);
 $email = filter_var($_GET['e'], FILTER_VALIDATE_EMAIL);
 
 //Als er gegevens missen dan stoppen we met een foutmelding
 if(empty($verificatie_code) || empty($email)){
-    echo 'Ongeldige gegevens!';
+  header("Location: " . url_to('/login'));
     exit();
 }
 
