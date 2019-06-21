@@ -1,3 +1,28 @@
 * {
     font-family: 'Ubuntu', sans-serif;
 }
+
+/* Medium devices */
+@media only screen and (min-width: 768px) {
+  
+    #logo {
+      display: none;
+    }
+    
+  }
+
+
+/* Large devices */
+@media only screen and (min-width: 992px) {
+  
+    .wrapper {
+        width: 28%;
+        margin-right: 36%;
+        margin-left: 36%;
+    }
+
+    #logo {
+      display: none;
+    }
+    
+  }

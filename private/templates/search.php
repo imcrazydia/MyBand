@@ -2,8 +2,8 @@
   <form action="<?php echo url_to('/search'); ?>" method="GET">
     <input type="hidden" name="page" value="search" />
     <input type="text" name="term" value="<?php if (isset($searchterm)): echo $searchterm; endif; ?>"
-      placeholder="Vul de zoekopdracht in" />
-    <button type="submit">Zoek</button>
+      placeholder="search for stories and users" />
+    <button type="submit">Search</button>
   </form>
 
   <h1>Search results</h1>
@@ -41,7 +41,7 @@
         <a href="<?php echo url_to('/users/' . $result['username']) ?>">
           <div class="result result-<?php echo $result['type'] ?>">
             <img class="user_pic" src="<?php echo url_to("/" . $result['user_pic']) ?>" />
-            <div>
+            <div class="user_content">
               <h3><?php echo $result['username'] ?></h3>
               <p><?php echo $result['works'] ?> Books - <?php echo $result['followers'] ?> Followers</p>
             </div>
@@ -52,5 +52,4 @@
     </div>
 
   </div>
-  <?php } ?>
-    
+  <?php } ?>    

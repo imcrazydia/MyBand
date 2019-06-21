@@ -15,7 +15,6 @@ $default_pic = "/img/default.png";
     <div class="wrapper">
       <img id="logo" src="../public/img/logo.PNG" alt="logo" style="width: 110px;">
       <br>
-      <h3 id="logoText"><b>Social Direct Messages</b></h3>
         <h2>Sign Up</h2>
         <?php if (!empty($_GET['error'])) {
             echo $_GET['error'];

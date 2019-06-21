@@ -26,7 +26,7 @@
 
 .pageSecond {
     background-image: url('../../public/img/about_us2.jpg');
-    background-size: cover; 
+    background-size: cover;   
 }
 .secondText {
     background-color: rgba(0, 153, 153, 0.7);
@@ -76,3 +76,87 @@
 .fifthText p b {
     color: #f48c47;
 }
+
+/* Medium devices */
+@media only screen and (min-width: 768px) {
+    .secondText {
+        text-align: left;
+        padding: 3em;
+
+    }
+
+    .secondText p {
+        margin-right: 25em;
+    }
+
+    .thirdText {
+        padding-top: 7em;
+        padding-bottom: 7em;
+    }
+
+    .thirdText p {
+        margin-right: 12em;
+        margin-left: 12em;
+    }
+
+    .fourthText {
+        text-align: left;
+        padding: 3em;
+    }
+
+    .fourthText h1 {
+        margin-right: 12em;
+    }
+
+    .fourthText p {
+        margin-right: 25em;
+    }
+
+    .fifthText p {
+        margin-right: 12em;
+        margin-left: 12em;
+    }
+
+}
+
+/* Large devices */
+@media only screen and (min-width: 992px) {
+    .topText {
+        padding: 10em;
+    }
+
+    .secondText {
+        padding: 10em;
+    }
+
+    .secondText p {
+        margin-right: 35em;
+    }
+
+    .thirdText {
+        padding-top: 12em;
+        padding-bottom: 12em;
+    }
+
+    .thirdText p {
+        margin-right: 20em;
+        margin-left: 20em;
+    }
+
+    .fourthText {
+        padding: 10em;
+    }
+
+    .fourthText h1 {
+        margin-right: 12em;
+    }
+
+    .fourthText p {
+        margin-right: 40em;
+    }
+
+    .fifthText p {
+        margin-right: 20em;
+        margin-left: 20em;
+    }
+  }

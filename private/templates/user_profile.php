@@ -42,6 +42,7 @@
             <h4>Reading list</h4>
             <h4>Followers</h4>
         </div>
+        <br>
     </div>
 </div>
 <div id="bio_box">

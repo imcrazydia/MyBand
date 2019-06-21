@@ -84,3 +84,30 @@
     font-weight: bold;
 }
 
+/* Medium devices */
+@media only screen and (min-width: 768px) {
+
+    .topText {
+        padding: 6em;
+    }
+
+    .recommended_writers {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    .post_title {
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .post_writers img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+    }
+
+} 
+

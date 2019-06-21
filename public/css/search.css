@@ -111,6 +111,54 @@ textarea {
     border: none;
   }
 
+/* Medium devices */
+@media only screen and (min-width: 768px) {
+    .result {
+        width: 80%;
+        margin-right: 10%;
+        margin-left: 10%;
+ 
+    }
 
+    .story_results .story_cover {
+        width: 15vw;
+        height: 140px;
+    }
+
+    .user_results { 
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    .story_results { 
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+
+  /* Large devices */
+  @media only screen and (min-width: 992px) {
+
+    .story_results .story_cover {
+        width: 8vw;
+        height: 140px;
+        margin-left: 50%;
+    }
+
+    .all_user_results .user_pic {
+        margin-left: 50%;
+    }
+
+    .all_user_results .user_pic {
+        margin-left: 53%;
+    }
+
+    .user_content {
+        margin-right: 70%;
+    }
+
+    
+}
 
 
