@@ -18,3 +18,26 @@
   form {
       text-align: center;
   }
+
+  .button {
+    margin-right: 1em;
+    }
+
+    /* Medium devices */
+@media only screen and (min-width: 768px) {
+  #button2 {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+} 
+
+/* Large devices */
+@media only screen and (min-width: 992px) {
+
+  #button2 {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+  }
+}

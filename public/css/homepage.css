@@ -93,14 +93,14 @@
 
     .recommended_writers {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-gap: 1em;
     }
 
     .post_title {
-        width: 90%;
-        margin-left: 5%;
-        margin-right: 5%;
+        width: 70%;
+        margin-left: 15%;
+        margin-right: 15%;
     }
 
     .post_writers img {
@@ -110,4 +110,11 @@
     }
 
 } 
+
+/* Large devices */
+@media only screen and (min-width: 992px) { 
+    .recommended_writers {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
 

@@ -31,7 +31,7 @@
 <div class="header_img">
     <!-- Profiel Picture, Username and edit profile button-->
     <div class="header_info">
-        <a onclick="openNav()" id="settingsIcon"><i style='font-size:24px' class='fas'>&#xf013;</i></a>
+        <a onclick="openNav()" id="settingsIcon"><i class='fas'>&#xf013;</i></a>
 
         <img id="prof_pic" src="<?php echo url_to("/" . $user_pic) ?>" />
         <br>
@@ -54,6 +54,7 @@
         <br>
     </div>
 </div>
+<div class="wrapper">
 <div id="bio_box">
 <div id="bio">
     <h4><?php echo $bio ?></h4>
@@ -97,4 +98,5 @@
 <?php }
 }
 } ?>
+</div>
 <script src="<?php echo url_to('/js/profile.js')?>"></script>

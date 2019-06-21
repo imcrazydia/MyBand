@@ -34,6 +34,7 @@ while($row = $profile_edit->fetch()){
     </div>
     <br>
     <input class="button" type="submit" name="submit" value="Save Changes">
+    <a href="<?php echo url_to('/profile') ?>">Back</a>
   </form>
   <?php } 
 } ?>

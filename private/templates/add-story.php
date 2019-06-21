@@ -18,4 +18,5 @@
     </div>
     <br>
     <input class="button" type="submit" name="submit" value="Add story">
+    <a href="<?php echo url_to('/profile') ?>">Back</a>
   </form>

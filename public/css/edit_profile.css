@@ -16,3 +16,26 @@ body {
   margin-left: 15%;
   margin-right: 15%;
 }
+
+.button {
+  margin-right: 1.5em;
+  }
+
+      /* Medium devices */
+@media only screen and (min-width: 768px) {
+  #button2 {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+  }
+} 
+
+/* Large devices */
+@media only screen and (min-width: 992px) {
+
+  #button2 {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+  }
+}
